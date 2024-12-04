@@ -6,6 +6,7 @@ import { PlusCircle } from "../Icons/PlusCircle";
 import { ProductModal } from "../ProductModal";
 import { useState, useCallback } from "react";
 import { Product } from "../../types/Product";
+import { BASE_URL } from "../../../config";
 
 interface MenuProps {
   onAddToCart: (product: Product) => void;
@@ -39,7 +40,7 @@ export function Menu({ onAddToCart, products }: MenuProps) {
           <ProductContainer onPress={() => handleOpenModal(product)}>
             <ProductImage
               source={{
-                uri: `http://192.168.5.108:3001/uploads/${product.imagePath}`,
+                uri: `${BASE_URL}/uploads/${product.imagePath}`,
               }}
             />
 

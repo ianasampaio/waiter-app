@@ -36,6 +36,8 @@ export const Ingredient = styled.View`
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 4px;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Footer = styled.View`

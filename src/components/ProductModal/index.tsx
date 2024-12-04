@@ -5,6 +5,7 @@ import { CloseButton, Footer, FooterContainer, Header, Image, Ingredient, Ingred
 import { Close } from "../Icons/Close";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../Button";
+import { BASE_URL } from "../../../config";
 
 interface ProductModalProps {
   visible: boolean;
@@ -33,7 +34,7 @@ export function ProductModal({ visible, onClose, product, onAddToCart }: Product
 
       <Image
         source={{
-          uri: `http://192.168.5.108:3001/uploads/${product.imagePath}`,
+          uri: `${BASE_URL}/uploads/${product.imagePath}`,
         }}
       >
         <CloseButton onPress={onClose}>
@@ -59,7 +60,8 @@ export function ProductModal({ visible, onClose, product, onAddToCart }: Product
               style={{marginTop: 16}}
               renderItem={({ item : ingredient}) => (
                 <Ingredient>
-                  <Text size={14} color="#666">{ingredient.name}</Text>
+                  <Text>{ingredient.icon}</Text>
+                  <Text size={14} color="#666" style={{ marginLeft: 20 }}>{ingredient.name}</Text>
                 </Ingredient>
               )}
             />
